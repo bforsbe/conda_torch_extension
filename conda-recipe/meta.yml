@@ -1,0 +1,50 @@
+channels:
+  - defaults
+  - nvidia/label/cuda-12.1.0
+  - pytorch
+  - conda-forge
+
+package:
+  name: cte
+  version: '{{ environ.get("GIT_DESCRIBE_TAG", "v0.0.1dev0").lstrip('v') }}'
+
+source:
+  path: ../
+
+build:
+  number: '{{ environ.get("GIT_DESCRIBE_NUMBER", "0") }}'
+
+requirements:
+    - python=3.11.9
+    - pytorch-cuda=11.7
+    - pytorch::pytorch=2.0.1=py3.11_cuda11.7_cudnn8.5.0_0
+    - torchvision
+    - fftw
+    - cxx-compiler=1.3
+    - dotnet=8.0
+    - cuda-toolkit
+    - cmake
+  run:
+    - python=3.11.9
+    - pytorch-cuda=11.7
+    - pytorch::pytorch=2.0.1=py3.11_cuda11.7_cudnn8.5.0_0
+    - torchvision
+    - fftw
+    - cxx-compiler=1.3
+    - dotnet=8.0
+    - cuda-toolkit
+    - cmake
+
+
+about:
+  home: https://github.com/bforsbe/conda_torch_extension
+  summary: "conda cpp and cuda extensions in pytorch"
+  description: "TBA"
+  license: GPL-3.0-only
+  license_family: GPL
+# doc_url:
+  dev_url: https://github.com/bforsbe/conda_torch_extension
+
+extra:
+  recipe-maintainers:
+    - bforsbe

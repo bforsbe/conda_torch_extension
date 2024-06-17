@@ -1,0 +1,16 @@
+name: cte_build
+channels:
+  - nvidia/label/cuda-11.7.0
+  - pytorch
+  - conda-forge
+  - nodefaults
+dependencies:
+  - torchvision
+  - python
+  - pytorch-cuda=11.7
+  - pytorch=2.0.1
+  - fftw
+  - cmake
+  - cxx-compiler=1.3
+  - dotnet=8.0
+  - cuda-toolkit
