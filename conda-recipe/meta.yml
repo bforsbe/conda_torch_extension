@@ -25,6 +25,7 @@ requirements:
     - cuda-toolkit
     - cmake
     - mkl=2024.0.0
+    - pybind11
   run:
     - python=3.11.9
     - pytorch-cuda=11.7
@@ -36,6 +37,7 @@ requirements:
     - cuda-toolkit
     - cmake
     - mkl=2024.0.0
+    - pybind11
 
 
 about:
