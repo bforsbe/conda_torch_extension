@@ -31,7 +31,8 @@ list(APPEND CMAKE_PREFIX_PATH "libtorch")
 message(STATUS "CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES = ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES}")
 INCLUDE_DIRECTORIES("$ENV{CONDA_PREFIX}/include/python3.11")
 
-FILE(GLOB_RECURSE SOURCES *.cpp) # cte/*.cu cte/*.cpp
+FILE(GLOB SOURCES *.cpp) # cte/*.cu cte/*.cpp
+message(STATUS "SOURCES = ${SOURCES}")
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -w -fPIC -mavx2 -mf16c")
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
@@ -50,4 +51,5 @@ ADD_LIBRARY(CTE SHARED ${SOURCES})
 
 set_target_properties(CTE PROPERTIES CUDA_ARCHITECTURES "52;61;75;86")
 
-TARGET_LINK_LIBRARIES(CTE ${FFTW_LIBRARIES} libcudart.so libcufft.so libcublas.so libcurand.so libcusparse.so ${CMAKE_THREAD_LIBS_INIT} ${TORCH_LIBRARIES}) #libtiff.so
+TARGET_LINK_LIBRARIES(CTE ${FFTW_LIBRARIES} libcudart.so libcufft.so libcublas.so libcurand.so libcusparse.so ${CMAKE_THREAD_LIBS_INIT} ${TORCH_LIBRARIES})
+#libtiff.so
