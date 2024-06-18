@@ -3,16 +3,16 @@
 #include <torch/torch.h>
 #include <iostream>
 
-torch::Tensor d_sigmoid(torch::Tensor z) {
+torch::Tensor sigmoid(torch::Tensor z) {
   auto s = torch::sigmoid(z);
-  return (1 - s) * s;
+  return s;//(1 - s) * s;
 }
 
-PYBIND11_MODULE(cte_module, m) {
-    m.doc() = "pybind11 a plugin to calculate sigmoid derivative"; // optional module docstring
-    m.def("d_sigmoid",
-          &d_sigmoid,
-          "derviative of sigmoid");
+PYBIND11_MODULE(libCTE, m) {
+    m.doc() = "pybind11 a plugin to calculate sigmoid"; // optional module docstring
+    m.def("sigmoid",
+          &sigmoid,
+          "a standard sigmoid");
 }
 
 /*
