@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - gh_workflow
     #tags:
     #  # push a tagged commit to trigger a release...
     #  # e.g. git tag -am v0.0.1 "v0.0.1"; git push --follow-tags

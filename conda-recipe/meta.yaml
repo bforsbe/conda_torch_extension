@@ -15,6 +15,7 @@ build:
   number: '{{ environ.get("GIT_DESCRIBE_NUMBER", "0") }}'
 
 requirements:
+  host:
     - python=3.11.9
     - pytorch-cuda=11.7
     - pytorch::pytorch=2.0.1=py3.11_cuda11.7_cudnn8.5.0_0
