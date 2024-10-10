@@ -10,6 +10,9 @@ on:
     #  # e.g. git tag -am v0.0.1 "v0.0.1"; git push --follow-tags
     #  - "v*"
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 # cancel in-progress runs that use the same workflow and branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
