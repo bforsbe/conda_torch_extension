@@ -66,6 +66,7 @@ jobs:
       - name: Build conda package
         shell: bash -el {0}
         run: |
+          sudo apt-get install python3-dev
           conda activate package-build
           conda install conda-build anaconda-client
           ls -lrth
