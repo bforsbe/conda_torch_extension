@@ -67,6 +67,10 @@ jobs:
         shell: bash -el {0}
         run: |
           sudo apt-get install python3-dev
+          which python 
+          python --version 
+          ls -lrth /usr/share/miniconda/envs/package-build/include
+          $(/usr/share/miniconda/envs/package-build/bin/python3-config --includes)
           conda activate package-build
           conda install conda-build anaconda-client
           ls -lrth
